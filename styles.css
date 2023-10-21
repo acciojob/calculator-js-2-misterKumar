@@ -20,6 +20,7 @@ button {
   height: 110px;
   font-size: 24px;
   margin: 0px;
+	border-width:2px;
 }
 
 .buttons {
@@ -59,11 +60,23 @@ button#cl {
 	grid-column: span 2;
 } */
 button#divi,
-button#*,
-button#-,
+button#multiply,
+button#minus,
 button#plus,
 button#op,
 button#cl,
 button#C {
-  background-color: #5555FF;
+  background-color: #E5E5E5;
+  transition: background-color 0.3s; /* Add a smooth transition effect */
+  
 }
+/* 
+button#divi:hover,
+button#multiply:hover,
+button#minus:hover,
+button#plus:hover,
+button#op:hover,
+button#cl:hover,
+button#C:hover {
+  background-color: #3333FF;
+} */
