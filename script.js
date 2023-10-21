@@ -1,5 +1,3 @@
-//your JS code here. If required.
-// Add event listeners for button clicks and define their functionality
 const display = document.getElementById('display');
 const buttons = document.querySelectorAll('button');
 
@@ -7,7 +5,10 @@ buttons.forEach((button) => {
   button.addEventListener('click', () => {
     const buttonText = button.innerText;
 
-    // Implement the functionality for each button based on its ID
+    if (buttonText === '.' && display.value.includes('.')) {
+      return;
+    }
+
     switch (button.id) {
       case 'C':
         display.value = '';
