@@ -1,5 +1,6 @@
 body {
-  font-family: Arial, sans-serif;
+/*   font-family: Arial, sans-serif; */
+  display area : display
 }
 
 .calculator {
@@ -29,7 +30,7 @@ button {
 }
 
 /* button#C {
-  grid-column: span ;
+  grid-column: span 2;
 } */
 
 /* button#back {
@@ -41,9 +42,9 @@ button#equal {
 	background-color:#5555FF;
 }
 
-button#0 {
+/* button#0 {
   grid-column: span 2;
-}
+} */
 
 /* button#divi,
 button#multiply,
@@ -57,3 +58,12 @@ button#cl {
   background-color: #e0e0f0;
 	grid-column: span 2;
 } */
+button#divi,
+button#*,
+button#-,
+button#plus,
+button#op,
+button#cl,
+button#C {
+  background-color: #5555FF;
+}
