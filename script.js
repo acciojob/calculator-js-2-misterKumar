@@ -1,30 +1,76 @@
-const display = document.getElementById('display');
-const buttons = document.querySelectorAll('button');
+let displayxyz = document.getElementById("display")
 
-buttons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const buttonText = button.innerText;
+let buttonsxyz = Array.from(document.getElementsByClassName("btn"))
 
-    if (buttonText === '.' && display.value.includes('.')) {
-      return;
-    }
-
-    switch (button.id) {
-      case 'C':
-        display.value = '';
-        break;
-      case 'back':
-        display.value = display.value.slice(0, -1);
-        break;
-      case 'equal':
-        try {
-          display.value = eval(display.value);
-        } catch (error) {
-          display.value = 'Error';
+function firstFunctionxyz(btnxyz){
+    btnxyz.addEventListener("click",(xyz)=>{
+        switch(xyz.target.innerText){
+            case 'C':
+                displayxyz.innerText = ""
+                break
+            case '←':
+                displayxyz.innerText = displayxyz.innerText.slice(0,-1)
+                break
+            case '=':
+                try{
+                    displayxyz.innerText = eval(displayxyz.innerText)
+                    // djfbdj
+                    // diuhjdbjh
+                }catch{
+                    displayxyz.innerText="Error"
+                }
+                break
+            default:
+                displayxyz.innerText = display.innerText + xyz.target.innerText
+                break
         }
-        break;
-      default:
-        display.value += buttonText;
+    })
+}
+
+function isOpxyz(opxyz){
+    if(opxyz==="+" || opxyz==='-' || opxyz==='/' || opxyz==='*')
+        return true
+    return false
+}
+function clickingxyz(clickedxyz){
+    if(displayxyz.innerText===""){
+        if(clickedxyz!='0'){
+            displayxyz.innerText = displayxyz.innerText+clickedxyz
+        }
     }
-  });
-});
+    else{
+        var innerTextxyz = displayxyz.innerText
+        var lenxyz = innerTextxyz.length
+
+        var lastCharxyz = innerTextxyz[lenxyz-1]
+
+        if(isOpxyz(lastCharxyz)===true){
+            if(clickedxyz!='0'){
+                if(isOpxyz(clickedxyz)===true){
+                    displayxyz.innerText = displayxyz.innerText.slice(0,-1)
+                }
+                displayxyz.innerText = displayxyz.innerText+clickedxyz
+
+            }
+        }else{
+            displayxyz.innerText = displayxyz.innerText+clickedxyz
+        }
+
+    }
+}
+
+function evalxyz(){
+    try{
+        displayxyz.innerText = eval(displayxyz.innerText)
+    }catch(err){
+        displayxyz.innerText="Error"
+    }
+}
+
+function clearxyz(){
+    displayxyz.innerText = ""
+}
+
+function backxyz(){
+    displayxyz.innerText = displayxyz.innerText.slice(0,-1)
+}
